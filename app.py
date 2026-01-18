@@ -62,6 +62,23 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+# ---------------------------------------------------
+# AUTHENTICATION
+# ---------------------------------------------------
+if "authenticated" not in st.session_state:
+    st.session_state.authenticated = False
+
+if not st.session_state.authenticated:
+    st.title("🔐 Login")
+    password = st.text_input("Enter Password", type="password")
+    if st.button("Login"):
+        if password == os.getenv("APP_PASSWORD"):
+            st.session_state.authenticated = True
+            st.rerun()
+        else:
+            st.error("Incorrect password")
+    st.stop()
+
 st.title("VOIS FinOps AI Assistant : Prototype")
 
 with st.expander("⚖️ Disclaimer and Data Handling Information", expanded=False):
