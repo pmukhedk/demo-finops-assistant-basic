@@ -1,0 +1,12 @@
+streamlit
+qdrant-client
+sentence-transformers
+langchain
+langchain-community
+langchain-qdrant
+langchain-huggingface
+pandas
+openai
+python-dotenv
+openpyxl
+docling
